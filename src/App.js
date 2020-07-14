@@ -116,11 +116,9 @@ function App() {
       <div>
         <h1 style={styles.heading}>Minesweeper</h1>
         <div style={styles.buttonsDiv}>
-          {/* number of mines */}
           <div style={styles.buttonDiv} onClick={setupGame}>
             <p style={styles.buttonText}>New Game</p>
           </div>
-          {/* timer */}
         </div>
         <div style={styles.boardContainer}>
           {board.map((row, row_index) => (
