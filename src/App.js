@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { boardSetup, isBomb, isZeroTile, gameEnded } from "./logic";
-import { boardSize ,levels} from "./constants";
+import { boardSize, levels } from "./constants";
 
 const Tile = ({ tile: { value, open, flagged, wrongFlagged } }) => {
   let text;
@@ -31,9 +31,10 @@ function App() {
     setMode("B");
     setGameover(false);
     setWon(false);
-    let difficulty =
-      prompt("select difficulty level easy, medium, hard") ||"";
-     difficulty=levels.includes(difficulty.toUpperCase())? difficulty.toUpperCase():"EASY"; 
+    let difficulty = prompt("select difficulty level easy, medium, hard") || "";
+    difficulty = levels.includes(difficulty.toUpperCase())
+      ? difficulty.toUpperCase()
+      : "EASY";
     setBoard(boardSetup(boardSize[difficulty], difficulty));
   };
 
@@ -213,7 +214,7 @@ const styles = {
   buttonDiv: {
     padding: "1px 6px 1px 6px",
     backgroundColor: "green",
-    width: 79,
+    width: 85,
     height: 30,
     borderRadius: 5,
     marginRight: 12
@@ -227,7 +228,8 @@ const styles = {
   boardContainer: {
     display: "flex",
     flex: 1,
-    justifyContent: "center"
+    width: "fit-content",
+    margin: "0 auto"
   },
   modeContainer: {
     display: "flex",
@@ -243,7 +245,7 @@ const styles = {
   modeButton: {
     padding: "1px 6px 1px 6px",
     backgroundColor: "green",
-    width: 40,
+    width: 45,
     height: 30,
     borderRadius: 5
   },
